@@ -1,11 +1,12 @@
 #include <iostream>
 #include <chrono>
+#include <cmath>
 
 using namespace std;
 using namespace std::chrono;
 
 double calculate_expression(double x) {
-    return x * x - x * x + x * 4 - x * 5 + x + x;
+    return pow(x, 2) - pow(x, 2) + x * 4 - x * 5 + x + x;
 }
 
 int main() {
@@ -16,9 +17,11 @@ int main() {
 
         if (input_n == "q") break;
 
-        cout << "Введите значение x: ";
+        cout << "Введите значение x (или 'q' для выхода): ";
         string input_x;
         cin >> input_x;
+
+        if (input_x == "q") break;
 
         try {
             int n = stoi(input_n);

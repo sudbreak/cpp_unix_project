@@ -9,7 +9,9 @@ def main():
         if iterations == 'q':
             break
 
-        x_input = input("Введите значение x: ")
+        x_input = input("Введите значение x (или 'q' для выхода): ")
+        if x_input == 'q':
+            break
 
         try:
             n = int(iterations)
@@ -21,7 +23,7 @@ def main():
                 calculate_expression(x)
 
             end_time = time.time()
-            print(f"Время выполнения: {end_time - start_time:.6f} секунд\n")
+            print(f"Время выполнения: {end_time - start_time} секунд\n")
 
         except ValueError:
             print("Ошибка: введено не число. Завершение программы.")
