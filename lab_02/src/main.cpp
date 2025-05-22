@@ -12,15 +12,21 @@ double calculate_expression(double x) {
 int main() {
     while (true) {
         cout << "Введите количество итераций (или 'q' для выхода): ";
-        string input;
-        cin >> input;
+        string input_n;
+        cin >> input_n;
 
-        if (input == "q") break;
+        if (input_n == "q") break;
+
+        cout << "Введите значение x (или 'q' для выхода): ";
+        string input_x;
+        cin >> input_x;
+
+        if (input_x == "q") break;
 
         try {
-            int n = stoi(input);
+            int n = stoi(input_n);
+            double x = stod(input_x);
 
-            double x = 1.234; // фиксированное значение x
             auto start = high_resolution_clock::now();
 
             for (int i = 0; i < n; ++i) {
